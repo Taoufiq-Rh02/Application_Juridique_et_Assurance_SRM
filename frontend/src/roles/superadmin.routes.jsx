@@ -12,7 +12,7 @@ const superAdminRoutes = [
   },
   {
     path: "/Profils",
-    element: <div>Profils Page</div>
+    element: <div>Page Profils</div>
   },
   {
     path: "/encadrants",
