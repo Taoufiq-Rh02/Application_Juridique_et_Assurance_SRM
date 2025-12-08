@@ -17,7 +17,6 @@ export default function JuristeSidebar({ active, setActive }) {
         <nav 
             className={`navigation_dash ${active ? "active" : ""}`}
         >
-            {/*  */}
             <ul className="m-0 p-0">
                 <li>
                     <a href="#">
