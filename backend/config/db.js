@@ -8,3 +8,16 @@ export const db = mysql.createPool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 });
+
+// ✅ TEST DATABASE CONNECTION
+async function testConnection() {
+  try {
+    const connection = await db.getConnection();
+    console.log("✅ MySQL connected");
+    connection.release(); 
+  } catch (err) {
+    console.error("❌ MySQL connection error:", err.message);
+  }
+}
+
+testConnection();

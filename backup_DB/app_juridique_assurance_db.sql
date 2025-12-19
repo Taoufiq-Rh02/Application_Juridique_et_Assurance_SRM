@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 08 déc. 2025 à 11:03
+-- Généré le : ven. 19 déc. 2025 à 16:42
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -350,6 +350,7 @@ CREATE TABLE `users` (
   `phone` varchar(30) DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT 1,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
   `created_by` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
@@ -359,9 +360,23 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`, `phone`, `last_login`, `is_active`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'admin@example.com', '$2b$10$qwMRY5sN2Di2iO27P4xiFecAgbg3cRHLKNJ4XKv7Vwax45RUOBhdC', 1, '0600000000', NULL, 1, 1, '2025-12-05 09:33:35', '2025-12-05 09:33:35'),
-(2, 'John Doe', 'juriste@example.com', '$2b$10$IfOVj9.fTssdtEbXewi4iuxdINgNLzoulgLmgaObCfk7uGuKb7kxi', 2, '0611111111', NULL, 1, 1, '2025-12-05 09:33:35', '2025-12-05 09:33:35');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`, `phone`, `last_login`, `is_active`, `is_deleted`, `created_by`, `created_at`, `updated_at`) VALUES
+(1, 'Super Admin', 'admin@example.com', '$2b$10$qwMRY5sN2Di2iO27P4xiFecAgbg3cRHLKNJ4XKv7Vwax45RUOBhdC', 1, '0600000000', NULL, 1, 0, 1, '2025-12-05 09:33:35', '2025-12-05 09:33:35'),
+(2, 'John Doe', 'juriste@example.com', '$2b$10$IfOVj9.fTssdtEbXewi4iuxdINgNLzoulgLmgaObCfk7uGuKb7kxi', 2, '0611111111', NULL, 1, 0, 1, '2025-12-05 09:33:35', '2025-12-05 09:33:35'),
+(3, 'logiss2_1', 'abcd@example.com', '$2b$10$1issXUL1DA47Jcz349Gp9Od1op21qVrjRnW7X3TD63.h/GS2ViiVS', 2, '33333', NULL, 1, 0, NULL, '2025-12-11 08:03:03', NULL),
+(4, 'logiss2_1', 'admooin@example.com', '$2b$10$XqdPS25p4W8FdVZP3nu9C.yTIQmt91xpmHJnP2fqGUSEw6TwfKQDu', 2, '33333', NULL, 1, 0, NULL, '2025-12-12 15:26:53', NULL),
+(5, 'logiss2_1', 'admin122@example.com', '$2b$10$m2BLjYCmEnLRtStWm1Xzl.4QnDBkd3sePT1W5aRc3Nnnabtd2IZKC', 2, '33333', NULL, 1, 0, NULL, '2025-12-16 08:15:38', NULL),
+(6, 'logiss2_1', 'admin12221@example.com', '$2b$10$Z4dj9Jx.GExm/BpULUtX4e9z0WTqR.VkGTRCqcY3.zqWsT2iURPva', 2, '33333', NULL, 1, 0, NULL, '2025-12-16 08:23:35', NULL),
+(7, 'logiss2_1', 'admin12221v@example.com', '$2b$10$QycKEllaM.8ooYXL3hr3IunM5ey6zjxR8sC59WuecL0EZ/G/XykGe', 2, '33333', NULL, 1, 0, NULL, '2025-12-16 08:23:51', NULL),
+(8, 'logiss2_1_17èè', 'admin78@example.com', '$2b$10$WoNoC3TgNi7nIMe2JoEoWuVYUByQi6W/fYXiKAVMpzxPFKWhUEikG', 2, '33333', NULL, 1, 0, NULL, '2025-12-16 14:57:11', NULL),
+(9, 'logiss2_1', 'adminre@example.com', '$2b$10$i0imkMVYE3fDwDF1zqXFwO0ML.EoxGIRypSE81oi6IRthGlK3FVRO', 2, '33333', NULL, 1, 0, NULL, '2025-12-16 15:18:11', NULL),
+(10, 'logiss2_1012', 'adminreff@example.com', '$2b$10$TlXkQA7pjj4CEdldvlWO3OecXmbv6.FuYSrlw0mEyhw555seDTahS', 2, '33333002', NULL, 1, 0, NULL, '2025-12-16 15:20:17', NULL),
+(11, 'logiss2_1', 'adminx@example.com', '$2b$10$idJ29qSCD3yA36zdLFxmqeNFgQ4.dn.IcA/Cm35YUPT4OFMgWjYeK', 2, '33333', NULL, 0, 1, NULL, '2025-12-16 15:30:58', NULL),
+(12, 'logiss2_1', 'admdfsdc@example.com', '$2b$10$ptzNhvriyB7uisUMkUWiBOFTEZidY.Y3EkknR/ykW7FLl2MohNeSm', 2, '33333', NULL, 0, 0, NULL, '2025-12-17 14:18:24', NULL),
+(13, 'logiss2_1', 'admdfscddc@example.com', '$2b$10$7QMUcdqHvF9lhHeGWKpqD.Z0mA8CDSY9TCuXJv/ZQgLM17ALpfZ5C', 2, '33333', NULL, 0, 0, NULL, '2025-12-17 14:18:34', NULL),
+(14, 'logiss2_1', 'adminlmllj@example.com', '$2b$10$J.XFwMjOYPtLUa2Xiu.oKekKnts57.xs5CW0P6fVBSemtxDSEnlMS', 2, '33333', NULL, 0, 0, NULL, '2025-12-17 14:52:42', NULL),
+(15, 'logiss2_12', 'adm22@example.com', '$2b$10$V8VYlt321xwNgWmrZbKB8.8y.l2KuO4b/S1oZomWZWV58/BCztbEi', 2, '33333', NULL, 0, 0, NULL, '2025-12-17 14:53:42', NULL),
+(16, 'logiss2_33', 'adm33@example.com', '$2b$10$Z2b7qk9WEcEI2Dp420WH/Oo6YUs/B8G347uOb8XjAGQoU6a/ysNuG', 2, '33333', NULL, 0, 0, NULL, '2025-12-17 14:53:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -634,7 +649,7 @@ ALTER TABLE `tribunaux`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `vehicules_asrnc`

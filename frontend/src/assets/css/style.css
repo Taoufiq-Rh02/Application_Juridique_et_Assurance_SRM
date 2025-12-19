@@ -271,7 +271,20 @@ body {
   /* margin-top: 10px; */
 }
 
-.details_dash .recentOrders_dash {
+.details_dashV2 {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  /* display: grid; */
+  /* grid-template-columns: 2fr 1fr; */
+  /* grid-template-columns: 3fr 1fr; */
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 30px;
+  /* margin-top: 10px; */
+}
+
+.details_dash .recentOrders_dash,
+.details_dashV2 .recentOrders_dash {
   position: relative;
   display: grid;
   min-height: 500px;
@@ -281,7 +294,8 @@ body {
   border-radius: 20px;
 }
 
-.details_dash .cardHeader_dash {
+.details_dash .cardHeader_dash,
+.details_dashV2 .cardHeader_dash {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -299,37 +313,46 @@ body {
   border-radius: 6px;
 }
 
-.details_dash table {
+.details_dash table,
+.details_dashV2 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
   overflow: scroll;
   display: block;
 }
-.details_dash table thead td {
+.details_dash table thead td,
+.details_dashV2 table thead td {
   font-weight: 600;
 }
-.details_dash .recentOrders_dash table tr {
+.details_dash .recentOrders_dash table tr,
+.details_dashV2 .recentOrders_dash table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.details_dash .recentOrders_dash table tr:last-child {
+.details_dash .recentOrders_dash table tr:last-child,
+.details_dashV2 .recentOrders_dash table tr:last-child {
   border-bottom: none;
 }
-.details_dash .recentOrders_dash table tbody tr:hover {
+.details_dash .recentOrders_dash table tbody tr:hover,
+.details_dashV2 .recentOrders_dash table tbody tr:hover {
   background: var(--blue);
   color: var(--white);
 }
-.details_dash .recentOrders_dash table tr td {
+.details_dash .recentOrders_dash table tr td,
+.details_dashV2 .recentOrders_dash table tr td {
   padding: 10px;
 }
-.details_dash .recentOrders_dash table tr td:last-child {
+.details_dash .recentOrders_dash table tr td:last-child,
+.details_dashV2 .recentOrders_dash table tr td:last-child {
   text-align: end;
 }
-.details_dash .recentOrders_dash table tr td:nth-child(2) {
+.details_dash .recentOrders_dash table tr td:nth-child(2),
+.details_dashV2 .recentOrders_dash table tr td:nth-child(2) {
   text-align: end;
 }
-.details_dash .recentOrders_dash table tr td:nth-child(3) {
+.details_dash .recentOrders_dash table tr td:nth-child(3),
+.details_dashV2 .recentOrders_dash table tr td:nth-child(3) {
   text-align: center;
 }
 .status_dash.delivered {
@@ -504,7 +527,8 @@ body {
 
 /* @media (max-width: 768px) { */
 @media (max-width: 1270px) {
-  .details_dash {
+  .details_dash,
+  .details_dashV2 {
     grid-template-columns: 1fr;
   }
   .recentOrders_dash {

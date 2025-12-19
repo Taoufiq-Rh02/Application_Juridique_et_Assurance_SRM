@@ -12,8 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-
 // // 🟦 Load routes from each service
 // import authRoutes from "./services/auth_service/auth.routes.js";
 // import userRoutes from "./services/users_service/users.routes.js";
@@ -21,10 +19,7 @@ app.use(express.json());
 // app.use("/api/auth", authRoutes);
 // app.use("/api/users", userRoutes);
 
-// const authRoutes = require('./Auth/routes/authRoutes');
-// const profileRoutes = require('./profile_service/routes/profileRoutes');
-import profileRoutes from './profile_service/routes/profileRoutes.js';
-
+const profileRoutes = require('./profile_service/routes/profileRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use("/api/profile", profileRoutes);

@@ -6,6 +6,9 @@ import superAdminRoutes from "./roles/superadmin.routes";
 import juristeRoutes from "./roles/juriste.routes";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function RoleBasedRoutes() {
   const { user } = useAuth();
 
@@ -50,6 +53,18 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+
+        {/* ✅ TOAST CONTAINER (GLOBAL) */}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="colored"
+        />
         <Routes>
           <Route path="/" element={<LoginPage />} />
 

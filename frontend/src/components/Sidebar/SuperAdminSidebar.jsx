@@ -20,7 +20,7 @@ export default function SuperAdminSidebar({ active, setActive }) {
             {/*  */}
             <ul className="m-0 p-0">
                 <li>
-                    <a href="#">
+                    <a href="/dashboard/superadmin">
                         <span className="icon_dash">
                             <ion-icon name="home-outline" />
                         </span>
@@ -28,8 +28,8 @@ export default function SuperAdminSidebar({ active, setActive }) {
                     </a>
                 </li>
                 {/* Example Link - Dashboard */}
-                <li className={location.pathname === "/dashboard" ? "activeNavigation_dash" : ""}>
-                    <NavLink to="/dashboard">
+                <li className={location.pathname === "/dashboard/superadmin" ? "activeNavigation_dash" : ""}>
+                    <NavLink to="/dashboard/superadmin">
                         <span className="icon_dash">
                             <ion-icon name="home-outline" />
                         </span>
@@ -37,10 +37,10 @@ export default function SuperAdminSidebar({ active, setActive }) {
                     </NavLink>
                 </li>
                 <li  
-                    className={location.pathname.startsWith("/stagiaires") ? "activeNavigation_dash" : ""}
+                    className={location.pathname.startsWith("/profil") ? "activeNavigation_dash" : ""}
                 >
                     <NavLink  
-                        to="/Profils"
+                        to="/profils"
                     >
                         <span className="icon_dash">
                             <ion-icon name="people-outline" />
